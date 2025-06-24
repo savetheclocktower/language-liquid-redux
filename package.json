@@ -1,0 +1,23 @@
+{
+  "name": "language-liquid-redux",
+  "version": "0.0.0",
+  "main": "lib/main",
+  "description": "Tree-sitter–based language support for Liquid templates in Pulsar",
+  "keywords": [
+    "language",
+    "grammar",
+    "liquid",
+    "liquidjs",
+    "eleventy"
+  ],
+  "enhancedScopes": [
+    "text.html.liquid",
+    "text.html.liquid.frontmatter",
+    "source.gfm.liquid"
+  ],
+  "repository": "https://github.com/savetheclocktower/language-liquid-redux",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  }
+}

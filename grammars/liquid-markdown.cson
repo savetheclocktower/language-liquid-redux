@@ -1,0 +1,21 @@
+name: 'Markdown (Liquid)'
+scopeName: 'source.gfm.liquid'
+type: 'modern-tree-sitter'
+parser: 'tree-sitter-liquid'
+
+injectionRegex: '^liquid-markdown$'
+
+treeSitter:
+  parserSource: 'github:savetheclocktower/tree-sitter-liquid#e17694938b85d14166ca4474124e29ae0876cee8'
+  grammar: 'tree-sitter-liquid/tree-sitter-liquid.wasm'
+  highlightsQuery: 'tree-sitter-liquid/highlights.scm'
+  foldsQuery: 'tree-sitter-liquid/folds.scm'
+  indentsQuery: 'tree-sitter-liquid/indents.scm'
+
+fileTypes: [
+  'liquid'
+]
+
+comments:
+  start: '{% comment %}'
+  end: '{% endcomment %}'

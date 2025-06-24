@@ -1,0 +1,19 @@
+name: 'HTML (Liquid with Front Matter)'
+scopeName: 'text.html.liquid.frontmatter'
+type: 'modern-tree-sitter'
+parser: 'tree-sitter-frontmatter'
+
+treeSitter:
+  parserSource: 'github:savetheclocktower/tree-sitter-frontmatter#94a8901f122af27fa583f6815751aded637fa4cf'
+  grammar: 'tree-sitter-frontmatter/tree-sitter-frontmatter.wasm'
+  highlightsQuery: 'tree-sitter-frontmatter/highlights.scm'
+
+fileTypes: [
+  'liquid'
+]
+
+firstLineRegex: '^---$'
+
+comments:
+  start: '{% comment %}'
+  end: '{% endcomment %}'

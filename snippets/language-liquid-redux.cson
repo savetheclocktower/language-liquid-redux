@@ -1,0 +1,43 @@
+# If you want some example snippets, check out:
+# https://github.com/atom/language-javascript/blob/master/snippets/javascript.cson
+
+'.text.html.liquid, .source.gfm.liquid':
+  'for block':
+    prefix: 'for'
+    body: '{% for ${1:item} in ${2:collection} %}\n\t$0\n{% endfor %}'
+  'if block':
+    prefix: 'if'
+    body: '{% if ${1:condition} %}\n\t$0\n{% endif %}'
+  'elsif directive':
+    prefix: 'elsif'
+    body: '{% elsif ${1:condition} %}\n\t$0'
+  'else directive':
+    prefix: 'else'
+    body: '{% else %}\n\t$0'
+  'unless block':
+    prefix: 'unless'
+    body: '{% unless ${1:condition} %}\n\t$0\n{% endunless %}'
+  'render directive':
+    prefix: 'render'
+    body: '{% render ${1:"${2:file}"} %}'
+  'include directive':
+    prefix: 'include'
+    body: '{% include ${1:"${2:file}"} %}'
+  'assign directive':
+    prefix: 'assign'
+    body: '{% assign ${1:name} = ${2:value} %}'
+  'capture block':
+    prefix: 'capture'
+    body: '{% capture ${1:name} %}\n\t$0\n{% endcapture %}'
+  'output directive':
+    # `=` is a handy tab trigger, but it won't activate if it's adjacent to
+    # other symbols. The command is bound to a keyboard shortcut as a backup.
+    prefix: '='
+    command: 'insert-output-directive'
+    body: '{{ $0 }}'
+  'other directive':
+    # `-` is a handy tab trigger, but it won't activate if it's adjacent to
+    # other symbols. The command is bound to a keyboard shortcut as a backup.
+    prefix: '-'
+    command: 'insert-other-directive'
+    body: '{% $0 %}'

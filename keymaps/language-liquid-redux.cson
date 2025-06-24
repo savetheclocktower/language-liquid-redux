@@ -1,0 +1,10 @@
+'atom-text-editor[data-grammar~=\'liquid\']':
+  'space': 'language-liquid-redux:pad-between-directives'
+
+'.platform-darwin atom-text-editor[data-grammar~=\'liquid\']':
+  'cmd-ctrl-l': 'language-liquid-redux:insert-output-directive'
+  'cmd-ctrl-;': 'language-liquid-redux:insert-other-directive'
+
+'body:not(.platform-darwin) atom-text-editor[data-grammar~=\'liquid\']':
+  'alt-shift-l': 'language-liquid-redux:insert-output-directive'
+  'alt-shift-;': 'language-liquid-redux:insert-other-directive'

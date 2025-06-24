@@ -1,0 +1,21 @@
+name: 'HTML (Liquid)'
+scopeName: 'text.html.liquid'
+type: 'modern-tree-sitter'
+parser: 'tree-sitter-liquid'
+
+injectionRegex: '^liquid-html$'
+
+treeSitter:
+  parserSource: 'github:savetheclocktower/tree-sitter-liquid#81fe34d24932bafdd54fb8e163490233b7e8df38'
+  grammar: 'tree-sitter-liquid/tree-sitter-liquid.wasm'
+  highlightsQuery: 'tree-sitter-liquid/highlights.scm'
+  foldsQuery: 'tree-sitter-liquid/folds.scm'
+  indentsQuery: 'tree-sitter-liquid/indents.scm'
+
+fileTypes: [
+  'liquid'
+]
+
+comments:
+  start: '{% comment %}'
+  end: '{% endcomment %}'
