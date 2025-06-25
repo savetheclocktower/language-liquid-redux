@@ -1,6 +1,6 @@
 {
   "name": "language-liquid-redux",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "lib/main",
   "description": "Tree-sitter–based language support for Liquid templates in Pulsar",
   "keywords": [
