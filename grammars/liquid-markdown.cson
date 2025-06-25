@@ -6,7 +6,7 @@ parser: 'tree-sitter-liquid'
 injectionRegex: '^liquid-markdown$'
 
 treeSitter:
-  parserSource: 'github:savetheclocktower/tree-sitter-liquid#e17694938b85d14166ca4474124e29ae0876cee8'
+  parserSource: 'github:savetheclocktower/tree-sitter-liquid#ba78f13e67cebb89e5e061283cb2164446763bec'
   grammar: 'tree-sitter-liquid/tree-sitter-liquid.wasm'
   highlightsQuery: 'tree-sitter-liquid/highlights.scm'
   foldsQuery: 'tree-sitter-liquid/folds.scm'

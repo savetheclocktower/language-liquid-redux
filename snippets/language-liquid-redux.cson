@@ -8,6 +8,9 @@
   'if block':
     prefix: 'if'
     body: '{% if ${1:condition} %}\n\t$0\n{% endif %}'
+  'tablerow block':
+    prefix: 'tablerow'
+    body: '{% tablerow ${1:item} in ${2:collection} %}\n\t$0\n{% endtablerow %}'
   'elsif directive':
     prefix: 'elsif'
     body: '{% elsif ${1:condition} %}\n\t$0'

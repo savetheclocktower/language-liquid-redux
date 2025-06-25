@@ -3,10 +3,13 @@ scopeName: 'text.html.liquid'
 type: 'modern-tree-sitter'
 parser: 'tree-sitter-liquid'
 
-injectionRegex: '^liquid-html$'
+# GitHub interprets `liquid` on a fenced code block as HTML with Liquid. We'll
+# use `liquid-html` internally for injections, but we should also support
+# `liquid` for Markdown-authoring scenarios and such.
+injectionRegex: '^liquid-html$|^liquid$'
 
 treeSitter:
-  parserSource: 'github:savetheclocktower/tree-sitter-liquid#81fe34d24932bafdd54fb8e163490233b7e8df38'
+  parserSource: 'github:savetheclocktower/tree-sitter-liquid#ba78f13e67cebb89e5e061283cb2164446763bec'
   grammar: 'tree-sitter-liquid/tree-sitter-liquid.wasm'
   highlightsQuery: 'tree-sitter-liquid/highlights.scm'
   foldsQuery: 'tree-sitter-liquid/folds.scm'

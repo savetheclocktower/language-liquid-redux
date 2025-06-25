@@ -17,6 +17,7 @@
   (include_directive)
   (layout_directive)
   (endcase_directive)
+  (custom_directive)
   (if_directive)
   (elsif_directive)
   (else_directive)
@@ -153,6 +154,8 @@
   ">="
 ] @keyword.operator.comparison.liquid
 
+(selector_expression "." @keyword.operator.accessor.liquid)
+
 [
   "for" "endfor" "in"
   "if" "endif" "elsif" "else"
@@ -167,10 +170,20 @@
 
 (empty) @constant.language.empty.liquid
 
+(custom_directive tag: (_) @entity.name.tag.liquid)
+
 ; With `for` blocks
 (selector_expression
   operand: (identifier) @support.forloop.liquid
+  (#match? @support.forloop.liquid "^forloop$")
   (#is? test.descendantOfType "for_block liquid_for_block"))
+
+; With `for` blocks
+(selector_expression
+  operand: (identifier) @support.tablerowloop.liquid
+  (#match? @support.tablerowloop.liquid "^tablerowloop$")
+  (#is? test.descendantOfType "tablerow_block liquid_tablerow_block"))
+
 
 [
   "assign"
@@ -197,6 +210,9 @@
 ((string) @punctuation.definition.string.end.liquid
   (#set! adjust.startBeforeFirstMatchOf ".$"))
 
+(string (escape_sequence) @constant.character.escape.liquid)
+
+
 ; CONSTANTS
 ; =========
 
@@ -215,3 +231,10 @@
 
 (render_parameter
   key: (_) @entity.other.attribute-name.parameter)
+
+
+; PUNCTUATION
+; ===========
+
+["{%" "{%-"] @punctuation.delimiter.directive.start.liquid
+["%}" "-%}"] @punctuation.delimiter.directive.end.liquid
